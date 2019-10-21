@@ -1,4 +1,4 @@
-console.log('max');
+
 
 function smallestCommons(arr) {
     let min= Math.min(...arr);
