@@ -1,17 +1,18 @@
 //difference between two arrays
 function destroyer(arr) {
-    // Remove all the values
-    var diff=[];
-  for(let i=0; i<=arr.length; i++){
-    for(let j=0; j<=arr[0].length; j++){
-      for(let k=1; k<=arr.length;j++){
-        if(arr[k].indexOf(arr[i][j])=== -1){
-          diff.push(arr[i][j]);
-console,log(diff);
-        }
-      }
-    }
-  }
-  }
+let newarr=[];
+let args = Array.prototype.slice.call(arguments);
+
+for(let i=0; i<args[0].length; i++){
   
-  destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+  for(let j=0; j<args.length; j++){
+    if(arr[i] === args[j]){
+    arr.splice(i,1);
+    i--;
+  }
+}
+}
+console.log(arr);
+return arr;
+}
+destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")

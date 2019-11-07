@@ -5,20 +5,10 @@ function spinalCase(str) {
     //convert to lowercase
     //split words
     // join with dash
-    let newstr= str.split('');
-    let result
-    for(let i=0; i< newstr.length; i++){
-        var char = newstr.charAt(0);
-      if(char== char.toUppercase()){
-        result= newstr.slice(0,i--)+ " " +newstr.slice(i--);
-            }
-            console.log(result);
-    }
-  
-    
-    
-    console.log(newstr);
-    return newstr;
+    var regex= /\s+|_+/g;
+    str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+    console.log (str.replace(regex, "-").toLowerCase());
+    return str.replace(regex, "-").toLowerCase();
   }
   
   spinalCase('thisIsSpinalTap');
